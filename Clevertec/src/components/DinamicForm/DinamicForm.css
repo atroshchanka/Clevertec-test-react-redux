@@ -1,0 +1,60 @@
+form div{
+  margin-bottom :15px;
+}
+
+
+form li:first-child, form li:last-child{
+  border-bottom: 1px solid grey;
+}
+.title_form{
+  margin: 0;
+  display: inline;
+}
+form ul {
+  width: 750px;
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+form label{
+  width: 150px;
+  margin-top: 3px;
+
+  display: inline-block;
+  float: left;
+  padding: 3px;
+}
+
+form div:not(:last-child) span {
+    margin-right: 150px;
+}
+
+form div:nth-last-child(2) span {
+     margin-right: 55px;
+ }
+
+
+form input{
+  height: 20px;
+  width: 220px;
+  padding: 5px 8px;
+}
+.radio{
+    display: inline-block;
+}
+
+.radio > input{
+width: 20px;
+  display: inline;
+
+}
+
+form li h3{
+  display: inline-block;
+
+}
+
