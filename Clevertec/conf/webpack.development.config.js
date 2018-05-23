@@ -35,6 +35,18 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
           }
         }
       ]
+    },
+    {
+      test: /\.(gif|png|jpe?g)$/i,
+      use: [
+        'file-loader',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true,
+          },
+        },
+      ],
     }
   ]
   },

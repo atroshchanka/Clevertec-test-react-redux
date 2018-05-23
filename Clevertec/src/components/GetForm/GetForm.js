@@ -42,7 +42,6 @@ class GetForm extends React.Component {
     return (
       <div>
         <Button type="button" size='m' onClick={this.handleClick}>Получить форму</Button>
-        {/* <button className="button_getForm" onClick={this.handleClick}>Получить форму</button> */}
       </div>
     );
   }

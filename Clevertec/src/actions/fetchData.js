@@ -34,9 +34,10 @@ export function sendFetchData(url, data) {
 export function formFetchData(url) {
   return (dispatch) => {
     fetch(url, {
-      method: 'POST',
+      method: 'post',
     })
       .then(response => response.json())
-      .then(formData => dispatch(formFetchDataSuccess(formData)));
+      .then(formData => dispatch(formFetchDataSuccess(formData)))
+      .catch(error => console.log(error));
   };
 }

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import PropTypes from 'prop-types';
+import { openModal } from '../../actions/dialogWindow';
+
 import Form from 'arui-feather/form';
 import Button from 'arui-feather/button';
-import { openModal } from '../../actions/dialogWindow';
-import './DinamicForm.css';
 import FieldFormText from "../FieldFormText/FieldFormText";
 import FieldFormNumeric from "../FieldFormNumeric/FieldFormNumeric";
 import FieldFormList from "../FieldFormList/FieldFormList";
+import Heading from 'arui-feather/heading';
 
+import './DinamicForm.css';
 
 
 // Динамическая форма
@@ -28,7 +30,8 @@ class DinamicForm extends Component {
 	handleClick(){
 		this.props.dispatch(openModal());
 		setTimeout(() => {
-			if (this.props.formData.isOpen) { this.props.sendFetch('http://test.clevertec.ru/tt/data', { form: this.props.changeForm }); }
+			if (this.props.formData.isOpen) {
+				 this.props.sendFetch('http://test.clevertec.ru/tt/data', { form: this.props.changeForm }); }
 		}, 3000);
 
 	}
@@ -39,8 +42,8 @@ class DinamicForm extends Component {
 			return null;
 		}
     return (
-        <Form onSubmit={this.handleClick} action="">
-					<h2>{this.props.data.title}</h2>
+        <Form onSubmit={this.handleClick}>
+					<Heading>{this.props.data.title}</Heading>
 					{
 						this.props.data.fields.filter(field => field.name === 'text')
 							.map(text => <FieldFormText field={text} />)
