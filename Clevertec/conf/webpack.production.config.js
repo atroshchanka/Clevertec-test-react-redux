@@ -13,16 +13,31 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
         'style-loader',
         {
           loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: "[hash:base64:10]",
-            minimize: true
-          }
+          // options: {
+          //   modules: true,
+          //   importLoaders: 1,
+          //   localIdentName: "[hash:base64:10]",
+          //   minimize: true
+          // }
         },
         { loader: 'postcss-loader' },
       ]
-    }]
+    },
+    {
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "babel-loader"
+        },
+        {
+          loader: "react-svg-loader",
+          options: {
+            jsx: true // true outputs JSX tags
+          }
+        }
+      ]
+    }
+  ]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({

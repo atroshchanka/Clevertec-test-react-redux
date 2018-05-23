@@ -1,5 +1,6 @@
 import { OPEN_DIALOG, CLOSE_DIALOG } from '../actions/dialogWindow';
 
+
 export function formData(state = { isOpen: false }, action) {
   switch (action.type) {
     case 'FORM_FETCH_DATA_SUCCESS':

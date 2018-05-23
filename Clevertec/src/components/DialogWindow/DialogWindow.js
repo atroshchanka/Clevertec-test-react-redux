@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from 'arui-feather/button';
-import { closeModal } from '../../actions/dialogWindow';
+import { closeModal } from '../../actions/dialogWindow';1
 import Spinner from '../Spinner/Spinner';
 import './DialogWindow.css';
 
